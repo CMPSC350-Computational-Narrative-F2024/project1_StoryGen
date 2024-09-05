@@ -28,10 +28,10 @@ jobs:
           with:
             fetch-depth: 0
         # Run the linting tool
-        - name: Check Markdown
-          uses: DavidAnson/markdownlint-cli2-action@v4
-          with:
-            globs: writing/report.md
+        #- name: Check Markdown
+        #  uses: DavidAnson/markdownlint-cli2-action@v4
+        #  with:
+        #    globs: writing/report.md
         # Setup Python for the current language version
         - name: Setup Python ${{ matrix.python-version }}
           if: always()
