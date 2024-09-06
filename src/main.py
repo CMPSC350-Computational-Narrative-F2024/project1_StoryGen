@@ -6,7 +6,7 @@ from dotenv import dotenv_values
 
 # Set up OpenAI credentials
 
-CONFIG = dotenv_values('.env')
+CONFIG = dotenv_values(".env")
 
 OPEN_AI_KEY = CONFIG["KEY"] or os.environ["OPEN_AI_KEY"]
 OPEN_AI_ORG = CONFIG["ORG"] or os.environ["OPEN_AI_ORG"]
@@ -33,14 +33,14 @@ def main():
         temperature = 0.9,
         top_p = 1,
         # Maximum size of requests (this is already max size)
-        max_tokens = 100 #(4097 - len(prompt))
+        max_tokens = 100, #(4097 - len(prompt))
         # Number of results to attempt and return
         n = 1
     )
     #print(response.choices[0].message)
 
     # Extract the response text
-    result = response['choices'][0]['message']['content'].strip()
+    result = response.choices[0].message.content.strip()
 
     print(result)
     
